@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends mysql-client cu
     rm -rf /var/lib/apt/lists/* && git clone https://github.com/WordPress/WordPress.git /var/www/wordpress
 
 # Copy nginx config
-COPY config/nginx/sites-available/wordpress.conf /etc/nginx/sites-available/
+COPY config/wordpress.conf /etc/nginx/sites-available/
 RUN ln -s /etc/nginx/sites-available/wordpress.conf /etc/nginx/sites-enabled/wordpress.conf
 RUN rm -rf /etc/nginx/sites-enabled/default
 WORKDIR /var/www/wordpress/
