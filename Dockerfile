@@ -14,7 +14,7 @@ RUN rm -rf /etc/nginx/sites-enabled/default
 WORKDIR /var/www/wordpress/
 
 # Setup entrypoint
-EXPOSE 80 8080 9000 6082
+EXPOSE 80
 COPY start.sh /
 RUN chmod +x /start.sh && chown root:root /start.sh
 ENTRYPOINT /start.sh
