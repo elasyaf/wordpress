@@ -1,7 +1,7 @@
 version: "2.0"
 services:
   mariadb:
-    image: '0xelasyaf/mariadb:10.3'
+    image: '0xelasyaf/mariadb:latest'
     container_name: dbserver
     ports:
       - '3306:3306'
