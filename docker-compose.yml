@@ -9,6 +9,7 @@ services:
       - NEW_USER=<your_new_user>
       - NEW_PASSWORD=<your_password_for_new_user>
       - NEW_DATABASE=<your_db_for_wordpress>
+      - DB_HOST=<your_db_address_or_ip>
 
   webserver:
     image: 0xelasyaf/wordpress:latest
