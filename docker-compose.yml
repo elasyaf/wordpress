@@ -15,12 +15,6 @@ services:
         - mariadb
     ports:
         - '80:80'
-    environment:
-        - WP_USER=<same_as_db_user>
-        - WP_PASSWORD=<same_as_your_password_for_db_new_user>
-        - WP_DATABASE=<same_as_your_db>
-        - WP_DB_HOST=dbserver
-
 
 
 
