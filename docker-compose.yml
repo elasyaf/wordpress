@@ -16,7 +16,6 @@ services:
     ports:
         - '80:80'
     environment:
-        
         - NEW_USER=<same_as_db_user>
         - NEW_PASSWORD=<same_as_your_password_for_db_new_user>
         - NEW_DATABASE=<same_as_your_db>
