@@ -16,7 +16,11 @@ services:
     ports:
         - '80:80'
     environment:
-        - URL=<your_FQDN> # you can change this with "localhost" if you want to local connection
+        
+        - NEW_USER=<same_as_db_user>
+        - NEW_PASSWORD=<same_as_your_password_for_db_new_user>
+        - NEW_DATABASE=<same_as_your_db>
+        - DB_HOST=dbserver
 
 
 
