@@ -3,19 +3,18 @@ services:
   mariadb:
     image: '0xelasyaf/mariadb:latest'
     container_name: dbserver
-    ports:
-      - '3306:3306'
     environment:
       - NEW_USER=<your_new_user>
       - NEW_PASSWORD=<your_password_for_new_user>
       - NEW_DATABASE=<your_db_for_wordpress>
-      - DB_HOST=<your_db_address_or_ip>
 
   webserver:
     image: 0xelasyaf/wordpress:latest
     container_name: wordpress
     links:
         - mariadb
+    ports:
+        - '80:80'
     environment:
         - URL=<your_FQDN> # you can change this with "localhost" if you want to local connection
 
