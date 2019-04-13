@@ -21,36 +21,32 @@ __wordpress__ builder using docker
 
 3. With docker compose.
  
-   ```
+```
 version: "2.0"
-    services:
-        mariadb:
-        image: '0xelasyaf/mariadb:latest'
-        container_name: dbserver
-        environment:
-            - NEW_USER=<your_new_user>
-            - NEW_PASSWORD=<your_password_for_new_user>
-            - NEW_DATABASE=<your_db_for_wordpress>
+services:
+  mariadb:
+    image: '0xelasyaf/mariadb:latest'
+    container_name: dbserver
+    environment:
+      - NEW_USER=<your_new_user>
+      - NEW_PASSWORD=<your_password_for_new_user>
+      - NEW_DATABASE=<your_db_for_wordpress>
 
-    webserver:
-        image: 0xelasyaf/wordpress:latest
-        container_name: wordpress
-        links:
-            - mariadb
-        ports:
-            - '80:80'
-        environment:
-        - NEW_USER=<same_as_db_user>
-        - NEW_PASSWORD=<same_as_your_password_for_db_new_user>
-        - NEW_DATABASE=<same_as_your_db>
-        - DB_HOST=dbserver
+  webserver:
+    image: 0xelasyaf/wordpress:latest
+    container_name: wordpress
+    links:
+        - mariadb
+    ports:
+        - '80:80'
+    environment:
+        - WP_USER=<same_as_db_user>
+        - WP_PASSWORD=<same_as_your_password_for_db_new_user>
+        - WP_DATABASE=<same_as_your_db>
+        - WP_DB_HOST=dbserver
 
+ ``` 
 
-
-
-
-          
-   ``` 
 License
 ------------------
 
